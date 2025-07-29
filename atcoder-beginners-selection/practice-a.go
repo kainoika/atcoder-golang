@@ -9,7 +9,7 @@ func main() {
 	fmt.Scanf("%d", &a)
 
 	var b, c int
-	fmt.Scanf("%d %d", &b, &c)
+	fmt.Scanf("%d %d", &b, &c)a
 
 	var s string
 	fmt.Scanf("%s", &s)
