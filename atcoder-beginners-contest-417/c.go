@@ -4,21 +4,22 @@ import "fmt"
 
 func main() {
 	var n int
-	fmt.Scanf("%d", &n)
+	fmt.Scan(&n)
 
-	numbers := make([]int, n)
+	A := make([]int, n)
 	for i := 0; i < n; i++ {
-		fmt.Scanf("%d", &numbers[i])
+		fmt.Scan(&A[i])
 	}
 
-	count := 0
-	for i := 1; i < n; i++ {
-		for j := i + 1; j <= n; j++ {
-			if j-i == numbers[i-1]+numbers[j-1] {
-				count++
-			}
-		}
+	count := make(map[int]int)
+	for i := 0; i < n; i++ {
+		count[i+1+A[i]]++
 	}
-
 	fmt.Println(count)
+
+	ans := 0
+	for j := 0; j < n; j++ {
+		ans += count[j+1-A[j]]
+	}
+	fmt.Println(ans)
 }
